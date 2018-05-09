@@ -18,18 +18,18 @@ class App extends Component {
 	}
 	// Checking if there is a token in local storage / set user based on token
 	getUser = () => {
-		var token = localStorage.getItem('mernToken')
+		var token = localStorage.getItem('gamerToken')
 		if(token){
 			axios.post('/auth/me/from/token', {
 				headers: { 'Authorization': `Bearer ${token}`}
 			}).then(response => {
 				this.setState({user: response.data.user})
 			}).catch(err => {
-				localStorage.removeItem('mernToken');
+				localStorage.removeItem('gamerToken');
 				this.setState({user: null})
 			});
 		} else {
-			localStorage.removeItem('mernToken');
+			localStorage.removeItem('gamerToken');
 			this.setState({user: null})
 		}
 	}
