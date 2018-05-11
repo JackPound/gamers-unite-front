@@ -15,7 +15,7 @@ class Login extends Component {
 			localStorage.setItem('gamerToken', result.data.token)
 			this.props.updateUser();
 		}).catch(err => {
-			console.log('error:', err.response.data);
+			console.log('error:', err);
 		});
 	}
 	handleEmailChange = (e) => {

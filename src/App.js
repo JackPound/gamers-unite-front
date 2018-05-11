@@ -1,11 +1,10 @@
 import './App.css';
 import axios from 'axios';
-import { BrowserRouter as Router} from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/Footer';
 import Main from './components/main/Main';
 import React, { Component } from 'react';
-import Routes from './components/Routes';
+
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -20,7 +19,7 @@ class App extends Component {
 	getUser = () => {
 		var token = localStorage.getItem('gamerToken')
 		if(token){
-			axios.post('/auth/me/from/token', {
+			axios.post('http://localhost:3000/auth/me/from/token', {
 				headers: { 'Authorization': `Bearer ${token}`}
 			}).then(response => {
 				this.setState({user: response.data.user})
@@ -36,9 +35,8 @@ class App extends Component {
 	render() {
 	    return (
 			<div className="App">
-				<Routes />
-				<Header />
-				<Main />
+				<Header user={this.state.user} updateUser={this.getUser} />
+				<Main user={this.state.user} updateUser={this.getUser} />
 				<Footer />
 			</div>
 	    );

@@ -12,6 +12,7 @@ class Signup extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault();
+		console.log(this.state)
 		axios.post('http://localhost:3000/auth/signup', this.state).then(result => {
 			localStorage.setItem('gamerToken', result.data)
 			this.props.updateUser()

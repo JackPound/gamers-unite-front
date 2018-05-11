@@ -1,5 +1,7 @@
+// NOT CURRENTLY USED 
+
 import React, { Component } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 class Personalize extends Component {
 	render() {

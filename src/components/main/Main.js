@@ -15,8 +15,11 @@ class Main extends Component {
 				<Route path='/games' component={GameSearch} />
 				<Route path='/profile' component={Profile} />
 				<Route path='/search' component={FindFriends} />
-				<Route path='/login' component={Login} />
+				<Route path='/login' component={
+					() => (<Login user={this.props.user} updateUser={this.props.updateUser} />)
+				} />
 				<Route path='/signup' component={Signup} />
+				<Route path='/profile' component={Profile} />
 			</Switch>
 		)
 	}
