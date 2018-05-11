@@ -1,25 +1,29 @@
 import React, { Component } from 'react'
-import axios from 'axios';
-
+import { Row, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 class Nav extends Component {
-	handleSubmit = (e) => {
-		e.preventDefault();
-		axios.get('http://localhost:3000/api/v1/games/')
-		.then(result => {
-			console.log('success', result);
-		})
-		.catch(err => {
-			console.log('error', err.response.data)
-		})
-	}
 	render() {
 		return(
-			<div>
-				<h1>this is NAV component</h1>
-				<form onSubmit={this.handleSubmit}>
-					<input type="submit" />
-				</form>
-			</div>
+			<Row className='show-grid'>
+				<Col md={1} className='headCol'>
+					<Link to='/'>Home</Link>
+				</Col>
+				<Col md={1} className='headCol'>
+					<Link to='/games'>Games</Link>
+				</Col>
+				<Col md={1} className='headCol'>
+					<Link to='/search'>Find Gamers!</Link>
+				</Col>
+				<Col md={1} className='headCol'>
+					<Link to='/login'>Login</Link>
+				</Col>
+				<Col md={1} className='headCol'>
+					<Link to='/signup'>Signup</Link>
+				</Col>
+				<Col md={1} className='headCol'>
+					<p>hello username here</p>
+				</Col>
+			</Row>	
 		)
 	}
 }

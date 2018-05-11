@@ -4,7 +4,7 @@ class Footer extends Component {
 	render() {
 		return(
 			<div>
-				<h1>this is FOOTER component</h1>
+				<footer className='footer'>GITLINKHERE Jack Pound &copy; 2018-{new Date().getFullYear()}</footer>
 			</div>
 		)
 	}

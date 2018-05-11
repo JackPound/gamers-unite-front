@@ -11,7 +11,7 @@ class Login extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault();
-		axios.post('/auth/login', this.state).then(result => {
+		axios.post('http://localhost:3000/auth/login', this.state).then(result => {
 			localStorage.setItem('gamerToken', result.data.token)
 			this.props.updateUser();
 		}).catch(err => {
@@ -25,13 +25,13 @@ class Login extends Component {
 		this.setState({password: e.target.value});
 	}
 	render() {
-		// TODO REDIRECT / RESTRICT IF LOGGED IN ALREADY
+		// PROJTODO REDIRECT / RESTRICT IF LOGGED IN ALREADY
 		return(
 			<div>
 				<h1> dis my app LOGIN component </h1>
 				<form onSubmit={this.handleSubmit}>
 					<div>
-						<input type='text' name'Email' placeholder='email' value={this.state.email} onChange={this.handleEmailChange} />
+						<input type='text' name='Email' placeholder='email' value={this.state.email} onChange={this.handleEmailChange} />
 					</div>
 					<div>
 						<input type='password' name='Password' placeholer='password' value={this.state.password} onChange={this.handlePasswordChange} />

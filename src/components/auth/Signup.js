@@ -12,11 +12,11 @@ class Signup extends Component {
 	}
 	handleSubmit = (e) => {
 		e.preventDefault();
-		axios.post('/auth/signup', this.state).then(result => {
+		axios.post('http://localhost:3000/auth/signup', this.state).then(result => {
 			localStorage.setItem('gamerToken', result.data)
 			this.props.updateUser()
 		}).catch(err => {
-			console.log('error:', err.response.data);
+			console.log('error:', err);
 		});
 	}
 	handleUsernameChange = (e) => { this.setState({username: e.target.value}); }
@@ -25,11 +25,12 @@ class Signup extends Component {
 
 	render() {
 		return(
+			// PROJTODO: redirect/restrict if already logged in
 			<div>
 				<h2>dis my app SIGNUP component YO</h2>
 				<form onSubmit={this.handleSubmit}>
 					<div>
-						<input type='text' name='Username' placeholder='username' value={this.state.username} onChange={this.handleNameChange} />
+						<input type='text' name='Username' placeholder='username' value={this.state.username} onChange={this.handleUsernameChange} />
 					</div>
 					<div>
 						<input type='text' name='Email' placeholder='email' value={this.state.email} onChange={this.handleEmailChange} />

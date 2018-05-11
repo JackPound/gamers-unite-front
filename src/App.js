@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { browserRouter as Router, Route } from 'react-router-dom';
-import axios from 'axios';
 import './App.css';
+import axios from 'axios';
+import { BrowserRouter as Router} from 'react-router-dom';
 import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
-import Main from './components/main/Main'
-
+import Footer from './components/Footer';
+import Main from './components/main/Main';
+import React, { Component } from 'react';
+import Routes from './components/Routes';
 class App extends Component {
 	constructor(props){
 		super(props);
@@ -36,6 +36,7 @@ class App extends Component {
 	render() {
 	    return (
 			<div className="App">
+				<Routes />
 				<Header />
 				<Main />
 				<Footer />

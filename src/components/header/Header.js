@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import Nav from './Nav';
 import Personalize from './Personalization';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class Header extends Component {
 	render() {
 		return(
-			<div>
-				<h1>this Is HEADER component</h1>
+			<Grid className='uheader'>
 				<Nav />
-				<Personalize />
-			</div>
+			</Grid>
 		)
 	}
 }
