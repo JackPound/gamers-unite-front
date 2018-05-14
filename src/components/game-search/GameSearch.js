@@ -6,18 +6,28 @@ class GameSearch extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			display: []
+			display: [],
+			user: 'hi'
 		}
 	}
-	componentWillMount = () =>{
+	// isUser = (which) =>{
+	// 	if(this.props.user){
+	// 		console.log(this.props.user)
+	// 		this.setState({user: this.props.user})
+	// 	}
+	// }
+	// componentWillMount = () =>{
+	// 	this.isUser()
+	// }
+	componentDidMount = () =>{
 		axios.get('http://localhost:3000/api/v1/games')
 		.then(result =>{
 			this.setState(
 				{display: result.data}
 			)
-			console.log('this.state.display', this.state.display)
 		})
 	}
+
 	render() {
 		return (
 			this.state.display.map(function(object){

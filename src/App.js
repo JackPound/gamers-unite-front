@@ -35,7 +35,6 @@ class App extends Component {
 	render() {
 	    return (
 			<div className="App">
-	    	{console.log('APP.JS:',this.state.user)}
 				<Header user={this.state.user} updateUser={this.getUser} />
 				<Main user={this.state.user} updateUser={this.getUser} />
 				<Footer />

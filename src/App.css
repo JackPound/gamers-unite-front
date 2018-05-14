@@ -13,6 +13,15 @@
   /*width: 20%;*/
 }
 
+.games {
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid black;
+  width: 15%;
+  height: ;
+}
+
 /*.head {
   width: 100%;
   background-color: orange;

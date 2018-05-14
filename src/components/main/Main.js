@@ -6,14 +6,19 @@ import Profile from '../profile/Profile';
 import FindFriends from '../find-friends/FindFriends';
 import Login from '../auth/Login';
 import Signup from '../auth/Signup';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 class Main extends Component {
+	constructor(props){
+		super(props)
+	}
 	render() {
 		return(
 			<Switch>
-			{console.log('Main.js:',this.props.user)}
 				<Route exact path='/' component={Landing} />
-				<Route path='/games' component={GameSearch} />
+				<Route path='/games' component={
+					() => (<GameSearch user={this.props.user} updateUser={this.props.updateUser} />)
+				} />
 				<Route path='/profile' component={
 					() => (<Profile user={this.props.user} updateUser={this.props.updateUser} />)
 				} />
@@ -22,7 +27,6 @@ class Main extends Component {
 					() => (<Login user={this.props.user} updateUser={this.props.updateUser} />)
 				} />
 				<Route path='/signup' component={Signup} />
-				<Route path='/profile' component={Profile} />
 			</Switch>
 		)
 	}

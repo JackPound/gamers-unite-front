@@ -2,21 +2,23 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class GameResults extends Component {
-	constructor(props) {
+	constructor(props){
 		super(props);
+		this.state={
+			hello: 'world'
+		}
 	}
 	getGame = () =>{
-		axios.get('http://localhost:3000/api/v1/games/'+this.props.data._id)
+		axios.post('http://localhost:3000/api/v1/games/'+this.props.data._id)
 		.then(result =>{
 			console.log(result)
 		})
 	}
 	render() {
 		return(
-			<div>
+			<div className='games'>
 				<a onClick={this.getGame}>{this.props.data.name}</a>
 				<div>{this.props.data.platform}</div>
-
 			</div>
 		)
 	}
