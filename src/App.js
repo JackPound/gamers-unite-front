@@ -4,6 +4,7 @@ import Header from './components/header/Header';
 import Footer from './components/Footer';
 import Main from './components/main/Main';
 import React, { Component } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 class App extends Component {
 	constructor(props){
@@ -34,11 +35,13 @@ class App extends Component {
 	}
 	render() {
 	    return (
-			<div className="App">
-				<Header user={this.state.user} updateUser={this.getUser} />
-				<Main user={this.state.user} updateUser={this.getUser} />
-				<Footer />
-			</div>
+			<Router>
+				<div className="App">
+					<Header user={this.state.user} updateUser={this.getUser} />
+					<Main user={this.state.user} updateUser={this.getUser} />
+					<Footer />
+				</div>
+			</Router>
 	    );
 	}
 }

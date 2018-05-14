@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-import { Row, Col } from 'react-bootstrap'
+import React, { Component } from 'react';
+import { Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 class Nav extends Component {
 	hello = () => {
 		if(this.props.user) {
@@ -33,7 +35,7 @@ class Nav extends Component {
 					<Col md={1} className='headCol'>
 						<Link to='/signup'>Signup</Link>
 					</Col>
-				</Row>	
+				</Row>
 			)
 		if(this.props.user)
 			return(
@@ -56,7 +58,7 @@ class Nav extends Component {
 					<Col md={1} className='headCol'>
 						hello user: {this.hello()}
 					</Col>
-				</Row>	
+				</Row>
 			)
 	}
 }

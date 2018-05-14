@@ -12,24 +12,11 @@ class UserGames extends Component {
 	// }
 	render() {
 		return(
-		<div>
-			<p> huh </p>
-			<p>{this.state.user.email}</p>
-		</div>
+			<div>
+				<h2>usergames component</h2>
+				
+			</div>
 		)
-		// if (this.props.user.playedGames){
-		// 	return(
-		// 		<div>
-		// 			{this.props.user.playedGames}
-		// 		</div>
-		// 	)
-		// } else {
-		// 	return(
-		// 		<div>
-		// 			Your favorite games will go here!
-		// 		</div>
-		// 	)
-		// }
 	}
 }
 

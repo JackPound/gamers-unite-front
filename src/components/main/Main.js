@@ -12,6 +12,7 @@ class Main extends Component {
 	constructor(props){
 		super(props)
 	}
+	
 	render() {
 		return(
 			<Switch>
@@ -22,14 +23,21 @@ class Main extends Component {
 				<Route path='/profile' component={
 					() => (<Profile user={this.props.user} updateUser={this.props.updateUser} />)
 				} />
-				<Route path='/search' component={FindFriends} />
+				<Route path='/search' component={
+					() => (<FindFriends user={this.props.user} updateUser={this.props.updateUser} />)
+				} />
 				<Route path='/login' component={
 					() => (<Login user={this.props.user} updateUser={this.props.updateUser} />)
 				} />
-				<Route path='/signup' component={Signup} />
+				<Route path='/signup' component={
+					() => (<Signup user={this.props.user} updateUser={this.props.updateUser} />)
+				} />
 			</Switch>
 		)
 	}
 }
 
 export default Main;
+				// <Route path='/games' component={
+				// 	() => (<GameSearch user={this.props.user} updateUser={this.props.updateUser} />)
+				// } />
