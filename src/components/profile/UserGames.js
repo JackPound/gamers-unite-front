@@ -4,7 +4,7 @@ class UserGames extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			user: this.props.profileUser
+			hello: 'world'
 		}
 	}
 	// componentWillMount = () =>{
@@ -13,8 +13,8 @@ class UserGames extends Component {
 	render() {
 		return(
 			<div>
-				<h2>usergames component</h2>
-				
+				<h3>{this.props.game}</h3>
+				<button>Remove</button>
 			</div>
 		)
 	}

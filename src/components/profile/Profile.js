@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import UserGames from './UserGames';
+import axios from 'axios';
 
 class Profile extends Component {
 	constructor(props){
 		super(props)
 		this.state ={
-			user: this.props.user
+			user: this.props.user,
+			display: []
 		}
+	}
+	componentDidMount = () =>{
+		axios.get('http://localhost:3000/users/'+this.props.user.id+'/games')
+		.then(result =>{
+			console.log(result)
+			this.setState({display: result.data})
+		})
 	}
 	render() {
 		if(!this.props.user) {
@@ -14,9 +23,11 @@ class Profile extends Component {
 		}
 		return(
 			<div>
-				<h1>this is PROFILE componenet</h1>
-				{this.props.user.playedGames[0]}
-				<UserGames profileUser={this.props.user} updateUser={this.props.updateUser} />
+				{this.state.display.map(function(game){
+					return(
+						<UserGames key={game._id} game={game} />
+					)
+				})}
 			</div>
 		)
 	}
