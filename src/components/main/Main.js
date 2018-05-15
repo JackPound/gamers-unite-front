@@ -6,38 +6,20 @@ import Profile from '../profile/Profile';
 import FindFriends from '../find-friends/FindFriends';
 import Login from '../auth/Login';
 import Signup from '../auth/Signup';
-import { BrowserRouter as Router } from 'react-router-dom'
 
 class Main extends Component {
-	constructor(props){
-		super(props)
-	}
-	
 	render() {
 		return(
 			<Switch>
 				<Route exact path='/' component={Landing} />
-				<Route path='/games' component={
-					() => (<GameSearch user={this.props.user} updateUser={this.props.updateUser} />)
-				} />
-				<Route path='/profile' component={
-					() => (<Profile user={this.props.user} updateUser={this.props.updateUser} />)
-				} />
-				<Route path='/search' component={
-					() => (<FindFriends user={this.props.user} updateUser={this.props.updateUser} />)
-				} />
-				<Route path='/login' component={
-					() => (<Login user={this.props.user} updateUser={this.props.updateUser} />)
-				} />
-				<Route path='/signup' component={
-					() => (<Signup user={this.props.user} updateUser={this.props.updateUser} />)
-				} />
+				<Route exact path='/games' render={(props) => <GameSearch user={this.props.user} updateUser={this.props.updateUser} {...props} />} />
+				<Route exact path='/profile' render={(props) => <Profile user={this.props.user} updateUser={this.props.updateUser} />} />
+				<Route exact path='/search' render={(props) => <FindFriends user={this.props.user} updateUser={this.props.updateUser} {...props} />} />
+				<Route exact path='/login' render={(props) => <Login user={this.props.user} updateUser={this.props.updateUser} {...props} />} />
+				<Route exact path='/signup' render={(props) => <Signup user={this.props.user} updateUser={this.props.updateUser} {...props} />} />
 			</Switch>
 		)
 	}
 }
 
 export default Main;
-				// <Route path='/games' component={
-				// 	() => (<GameSearch user={this.props.user} updateUser={this.props.updateUser} />)
-				// } />

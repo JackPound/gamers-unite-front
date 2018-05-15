@@ -1,10 +1,10 @@
 import './App.css';
-import axios from 'axios';
 import Header from './components/header/Header';
 import Footer from './components/Footer';
 import Main from './components/main/Main';
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import axios from 'axios';
 
 class App extends Component {
 	constructor(props){

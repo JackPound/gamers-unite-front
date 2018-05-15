@@ -13,7 +13,6 @@ class GameResults extends Component {
 		.then(result =>{
 			console.log(result)
 		})
-		// this.props.updateUser()
 	}
 	render() {
 		return(
@@ -24,5 +23,4 @@ class GameResults extends Component {
 		)
 	}
 }
-
 export default GameResults;

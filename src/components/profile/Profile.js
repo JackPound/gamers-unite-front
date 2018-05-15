@@ -8,25 +8,18 @@ class Profile extends Component {
 			user: this.props.user
 		}
 	}
-	// checkUser = () =>{
-	// 	console.log(this.props.user);
-	// }
-	// componentWillMount = () =>{
-	// 	console.log('Profile.js: componentWillMount', this.props.user)
-	// }
-	// componentDidMount = () =>{
-	// 	console.log('Profile.js: componentDidMount', this.props.user)
-	// 	this.checkUser()
-	// }
-		render() {
-			return(
-				<div>
-					<h1>this is PROFILE componenet</h1>
-					{this.props.user.username}
-					<UserGames profileUser={this.props.user} updateUser={this.props.updateUser} />
-				</div>
-			)
+	render() {
+		if(!this.props.user) {
+			return <div>Loading...</div>
 		}
+		return(
+			<div>
+				<h1>this is PROFILE componenet</h1>
+				{this.props.user.playedGames[0]}
+				<UserGames profileUser={this.props.user} updateUser={this.props.updateUser} />
+			</div>
+		)
+	}
 }
 
 export default Profile;

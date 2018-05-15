@@ -5,36 +5,22 @@ import GameResults from './GameResults';
 class GameSearch extends Component {
 	constructor(props) {
 		super(props);
-		// this.returnUser = this.returnUser.bind(this);
 		this.state = {
 			display: [],
 		}
+
 	}
-	// isUser = (which) =>{
-	// 	if(this.props.user){
-	// 		console.log(this.props.user)
-	// 		this.setState({user: this.props.user})
-	// 	}
-	// }
-	// componentWillMount = () =>{
-	// 	this.isUser()
-	// }
 	componentWillMount = () =>{
 		axios.get('http://localhost:3000/api/v1/games')
 		.then(result =>{
-			this.setState(
-				{display: result.data}
-			)
+			this.setState({display: result.data})
 		})
 	}
-	// returnUser = () => {
-	// 	return this.props.user
-	// }
-	// ifUser = () => {
-	// 	console.log('props:',this.props.user)
-	// }
 
 	render() {
+		if(!this.props.user) {
+			return <div>Loading...</div>
+		}
 		return (
 			<div>
 			{this.state.display.map(function(object){
