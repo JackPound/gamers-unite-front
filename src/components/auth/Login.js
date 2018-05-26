@@ -28,13 +28,13 @@ class Login extends Component {
 		// PROJTODO REDIRECT / RESTRICT IF LOGGED IN ALREADY
 		return(
 			<div>
-				<h1> dis my app LOGIN component </h1>
+				<h1> Login </h1>
 				<form onSubmit={this.handleSubmit}>
 					<div>
 						<input type='text' name='Email' placeholder='email' value={this.state.email} onChange={this.handleEmailChange} />
 					</div>
 					<div>
-						<input type='password' name='Password' placeholer='password' value={this.state.password} onChange={this.handlePasswordChange} />
+						<input type='password' name='Password' placeholder='password' value={this.state.password} onChange={this.handlePasswordChange} />
 					</div>
 					<div>
 						<input type='submit' value='Login' />

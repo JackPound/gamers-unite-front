@@ -28,7 +28,7 @@ class Signup extends Component {
 		return(
 			// PROJTODO: redirect/restrict if already logged in
 			<div>
-				<h2>dis my app SIGNUP component YO</h2>
+				<h2>Signup</h2>
 				<form onSubmit={this.handleSubmit}>
 					<div>
 						<input type='text' name='Username' placeholder='username' value={this.state.username} onChange={this.handleUsernameChange} />

@@ -12,7 +12,9 @@
 .headCol {
   /*width: 20%;*/
 }
-
+.profileGame{
+  display: inline-block;
+}
 .games {
   display: inline-block;
   margin: 20px;

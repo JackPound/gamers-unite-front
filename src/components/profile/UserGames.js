@@ -12,8 +12,8 @@ class UserGames extends Component {
 	// }
 	render() {
 		return(
-			<div>
-				<h3>{this.props.game}</h3>
+			<div className='games'>
+				<p>{this.props.game}</p>
 				<button>Remove</button>
 			</div>
 		)

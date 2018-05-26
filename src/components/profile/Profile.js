@@ -23,9 +23,10 @@ class Profile extends Component {
 		}
 		return(
 			<div>
+				<h1>My Played Games</h1>
 				{this.state.display.map(function(game){
 					return(
-						<UserGames key={game._id} game={game} />
+						<UserGames key={game} game={game}/>
 					)
 				})}
 			</div>

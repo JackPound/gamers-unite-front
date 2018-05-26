@@ -10,7 +10,7 @@ class FindFriendsResult extends Component {
 				<h1>{this.props.player.username}'s profile.</h1>
 				<hr />
 				<p>information about player</p>
-				<p>{this.props.player.email}</p>
+				<p>Email:{this.props.player.email}</p>
 				<a href='#'>Add friend</a>
 				
 			</div>

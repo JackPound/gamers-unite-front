@@ -14,6 +14,12 @@ class FindFriends extends Component {
 			hello: 'world',
 		}
 	}
+	componentWillMount =  () =>{
+		console.log('WillMount:',this.props.user)
+	}
+	componentDidMount = () =>{
+		console.log('DidMount:',this.props.user)
+	}
 	myGames = () =>{
 		axios.get('http://localhost:3000/users/'+this.props.user.id+'/games')
 		.then(result =>{
@@ -46,7 +52,7 @@ class FindFriends extends Component {
 					<select>
 						{this.state.display.map(function(object){
 							return (
-								<FindFriendsForm key={object._id} data={object} />
+								<FindFriendsForm key={object} data={object} />
 							)
 						})}
 					</select>
